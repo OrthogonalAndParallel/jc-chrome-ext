@@ -1,15 +1,18 @@
 {
   "manifest_version": 3,
-  "name": "Bookmark Sync for Vue App",
+  "name": "JC'Blog Chrome Ext",
   "version": "1.0",
-  "description": "将Chrome书签同步到Vue书签管理器",
+  "description": "JC博客配套插件",
   "permissions": [
-    "bookmarks"
+    "bookmarks",
+    "scripting"
   ],
+  "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
+    "default_title": "JC博客配套插件",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/icon16.png",

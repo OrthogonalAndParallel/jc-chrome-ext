@@ -29,4 +29,15 @@
             });
         }
     });
+
+    // 监听来自网页的自定义事件
+    window.addEventListener("vueRequest", (event) => {
+        const requestDetails = event.detail;
+        // 将请求数据发送给 background.js
+        chrome.runtime.sendMessage(requestDetails, (response) => {
+            // 收到后台脚本的响应后，再通过自定义事件发送回网页
+            const responseEvent = new CustomEvent("vueResponse", { detail: response });
+            window.dispatchEvent(responseEvent);
+        });
+    });
 })();
