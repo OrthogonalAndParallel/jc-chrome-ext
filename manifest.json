@@ -5,7 +5,8 @@
   "description": "JC博客配套插件",
   "permissions": [
     "bookmarks",
-    "scripting"
+    "scripting",
+    "cookies"
   ],
   "host_permissions": ["<all_urls>"],
   "background": {
